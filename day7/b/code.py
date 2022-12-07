@@ -55,7 +55,7 @@ def get_directories(current: dict) -> list:
     return keys
 
 
-def update_parent_size(size: int, current: dict) -> None:
+def update_parent_size(current: dict) -> None:
     if 'parent' in current:
         current['parent']['size'] += current['size']
 
@@ -63,10 +63,14 @@ def update_parent_size(size: int, current: dict) -> None:
 def traverse(current: dict, func) -> None:
     for directory in get_directories(current):
         traverse(current[directory], func)
-    func(current['size'], current)
+    func(current)
 
 
 traverse(TREE, update_parent_size)
+
+required_space: int = 30000000 - (70000000 - TREE['size'])
+
 sizes: list = []
-traverse(TREE, lambda size, _: sizes.append(size if size <= 100000 else 0))
-print(sum(sizes))
+traverse(TREE, lambda current: sizes.append(current['size']) if current['size'] >= required_space else 0)
+sizes.sort()
+print(sizes[0])
