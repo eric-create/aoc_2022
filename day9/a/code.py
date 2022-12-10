@@ -24,6 +24,10 @@ HISTORY: list = []
 X_MAX: int = 0
 Y_MAX: int = 0
 
+# # Debug
+# X_MAX: int = 5
+# Y_MAX: int = 5
+
 def get_screen():
     screen: list = []
     for y in range(0, Y_MAX + 1):
@@ -57,21 +61,19 @@ def _move(knot: tuple, direction: tuple) -> tuple:
     return (new_x, new_y)
 
 
+def normalize(i: int):
+    if i < 0: return -1
+    if i > 0: return 1
+    return 0
+
+
 def move(tail: tuple, head: tuple, direction: tuple, distance: int) -> tuple:
     """
     :return: new position of the passed part of the rope
     """
     head = _move(head, direction)
-
-    if direction in [LEFT, RIGHT]:
-        if abs(head[X] - tail[X]) > 1:
-            tail = _move(tail, direction)
-            tail = _move(tail, (0, head[Y] - tail[Y]))
-
-    if direction in [UP, DOWN]:
-        if abs(head[Y] - tail[Y]) > 1:
-            tail = _move(tail, direction)
-            tail = _move(tail, (head[X] - tail[X], 0))
+    if not (abs(head[X] - tail[X]) < 2 and abs(head[Y] - tail[Y]) < 2):
+        tail = _move(tail, (normalize(head[X] - tail[X]), normalize(head[Y] - tail[Y])))
 
     # # Debug
     # screen: list = get_screen()
@@ -102,12 +104,12 @@ screen: list = get_screen()
 # for tail_position, _ in HISTORY:
 #     screen[tail_position[1]][tail_position[0]] = 'T'
 
-_sum = 0
-
 tails: list = []
 for position in HISTORY:
     tails.append(position[0])
 
-print_screen(screen)
-print()
+# print_screen(screen)
+# print()
+
 print(len(set(tails)))
+assert len(set(tails)) == 5930
