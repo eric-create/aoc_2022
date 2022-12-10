@@ -1,4 +1,5 @@
 lines: list = open('input.txt').read().splitlines()
+
 history: list = []
 register: int = 1
 
@@ -9,10 +10,13 @@ for line in lines:
     if line.startswith('noop'):
         history.append(register)
 
-_sum = 0
 
-for i in range(0, 6):
-    index: int = i*40+20
-    _sum += history[index-1]*index
-
-print(_sum)
+for i, sprite_position in enumerate(history):
+    position : int = i % 40
+    if position == 0:
+        print()
+    if position >= sprite_position - 1 and position <= sprite_position + 1:
+        print('#', end='')
+    else:
+        print('.', end='')
+print()
