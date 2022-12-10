@@ -21,8 +21,13 @@ for line in lines:
     commands.append((direction, distance))
 
 HISTORY: list = []
-X_MAX: int = 5
-Y_MAX: int = 4
+
+# Small test
+# X_MAX: int = 5
+# Y_MAX: int = 4
+
+X_MAX: int = 25
+Y_MAX: int = 20
 
 def get_screen():
     screen: list = []
@@ -77,14 +82,25 @@ def move(rope: list, direction: tuple, distance: int) -> None:
     for i, knot in enumerate(rope):
         screen[knot[Y]][knot[X]] = i
     print_screen(screen)
+    print(rope[-1])
 
     HISTORY.append(rope)
     distance -= 1
     if distance > 0:
         move(rope, direction, distance)
 
+# Small test
+# HISTORY.append([(0,0) for _ in range(0,10)])
 
-HISTORY.append([(0,0) for _ in range(0,10)])
+HISTORY.append([(11,5) for _ in range(0,10)])
 
 for direction, distance in commands:
-    move(HISTORY[-1], direction, distance)
+    move(HISTORY[-1].copy(), direction, distance)
+
+
+tails: list = []
+for position in HISTORY:
+    print(position)
+    tails.append(position[-1])
+
+print(len(HISTORY), len(set(tails)))
