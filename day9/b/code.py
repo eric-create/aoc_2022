@@ -77,17 +77,17 @@ def move(rope: list, direction: tuple, distance: int) -> None:
             rope[i+1] = _move(rope[i+1], (normalize(rope[i][X] - rope[i+1][X]), normalize(rope[i][Y] - rope[i+1][Y])))
 
 
-    # Debug
-    screen: list = get_screen()
-    for i, knot in enumerate(rope):
-        screen[knot[Y]][knot[X]] = i
-    print_screen(screen)
-    print(rope[-1])
+    # # Debug
+    # screen: list = get_screen()
+    # for i, knot in enumerate(rope):
+    #     screen[knot[Y]][knot[X]] = i
+    # print_screen(screen)
 
     HISTORY.append(rope)
+
     distance -= 1
     if distance > 0:
-        move(rope, direction, distance)
+        move(rope.copy(), direction, distance)
 
 # Small test
 # HISTORY.append([(0,0) for _ in range(0,10)])
@@ -100,7 +100,6 @@ for direction, distance in commands:
 
 tails: list = []
 for position in HISTORY:
-    print(position)
     tails.append(position[-1])
 
-print(len(HISTORY), len(set(tails)))
+print(len(set(tails)))
