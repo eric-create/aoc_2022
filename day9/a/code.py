@@ -48,20 +48,13 @@ def _move(knot: tuple, direction: tuple) -> tuple:
     global X_MAX
     global Y_MAX
 
-    if direction in [LEFT, RIGHT]:
-        new_x: int = knot[X] + direction[X]
-        if new_x > X_MAX:
-            X_MAX = new_x
-        return (new_x, knot[Y])
+    new_x : int = knot[X] + direction[X]
+    new_y: int = knot[Y] + direction[Y]
 
-    if direction in [UP, DOWN]:
-        new_y: int = knot[Y] + direction[Y]
-        if new_y > Y_MAX:
-            Y_MAX = new_y
-        return (knot[X], new_y)
+    if new_x > X_MAX: X_MAX = new_x
+    if new_y > Y_MAX: Y_MAX = new_y
 
-    return knot
-
+    return (new_x, new_y)
 
 
 def move(tail: tuple, head: tuple, direction: tuple, distance: int) -> tuple:
