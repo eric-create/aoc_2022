@@ -1,0 +1,120 @@
+== After round 1000 ==
+Monkey 0: 2
+Monkey 1: 4
+Monkey 2: 7
+Monkey 3: 6
+
+== After round 2000 ==
+Monkey 0: 8
+Monkey 1: 9998
+Monkey 2: 10007
+Monkey 3: 6
+
+== After round 3000 ==
+Monkey 0: 8
+Monkey 1: 19998
+Monkey 2: 20007
+Monkey 3: 6
+
+== After round 4000 ==
+Monkey 0: 8
+Monkey 1: 29998
+Monkey 2: 30007
+Monkey 3: 6
+
+== After round 5000 ==
+Monkey 0: 8
+Monkey 1: 39998
+Monkey 2: 40007
+Monkey 3: 6
+
+== After round 6000 ==
+Monkey 0: 8
+Monkey 1: 49998
+Monkey 2: 50007
+Monkey 3: 6
+
+== After round 7000 ==
+Monkey 0: 8
+Monkey 1: 59998
+Monkey 2: 60007
+Monkey 3: 6
+
+== After round 8000 ==
+Monkey 0: 8
+Monkey 1: 69998
+Monkey 2: 70007
+Monkey 3: 6
+
+== After round 9000 ==
+Monkey 0: 8
+Monkey 1: 79998
+Monkey 2: 80007
+Monkey 3: 6
+
+== After round 10000 ==
+Monkey 0: 8
+Monkey 1: 89998
+Monkey 2: 90007
+Monkey 3: 6
+
+== After round 1000 ==
+Monkey 0: 2
+Monkey 1: 4
+Monkey 2: 7
+Monkey 3: 6
+
+== After round 2000 ==
+Monkey 0: 8
+Monkey 1: 9998
+Monkey 2: 10007
+Monkey 3: 6
+
+== After round 3000 ==
+Monkey 0: 8
+Monkey 1: 19998
+Monkey 2: 20007
+Monkey 3: 6
+
+== After round 4000 ==
+Monkey 0: 8
+Monkey 1: 29998
+Monkey 2: 30007
+Monkey 3: 6
+
+== After round 5000 ==
+Monkey 0: 8
+Monkey 1: 39998
+Monkey 2: 40007
+Monkey 3: 6
+
+== After round 6000 ==
+Monkey 0: 8
+Monkey 1: 49998
+Monkey 2: 50007
+Monkey 3: 6
+
+== After round 7000 ==
+Monkey 0: 8
+Monkey 1: 59998
+Monkey 2: 60007
+Monkey 3: 6
+
+== After round 8000 ==
+Monkey 0: 8
+Monkey 1: 69998
+Monkey 2: 70007
+Monkey 3: 6
+
+== After round 9000 ==
+Monkey 0: 8
+Monkey 1: 79998
+Monkey 2: 80007
+Monkey 3: 6
+
+== After round 10000 ==
+Monkey 0: 8
+Monkey 1: 89998
+Monkey 2: 90007
+Monkey 3: 6
+
